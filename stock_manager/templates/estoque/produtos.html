@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Produtos</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Lista de Produtos</h1>
+    </header>
+    <main>
+        <ul>
+            {%for produto in Produtos%}
+                <li>Produto: {{produto.nome}} - Quantidade: {{produto.quantidade}}</li>
+            {%empty%}
+                <li>Nenhum produto foi encontrado.</li>
+            {%endfor%}
+        </ul>
+    </main>
+    <footer>
+        <a href="/">Voltar para Home</a>
+    </footer>
+</body>
+</html>
